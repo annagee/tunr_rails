@@ -1,4 +1,3 @@
 class Genre < ActiveRecord::Base
-  has_many :album
-  belongs_to :album
+  has_many :albums
 end

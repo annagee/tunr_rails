@@ -11,14 +11,29 @@ Genre.delete_all
 Song.delete_all
 
 
-g1 = Genre.create(name: 'Pop')
-g2 = Genre.create(name: 'Rock')
-g3 = Genre.create(name: 'Soul')
+# g1 = Genre.create(name: 'Pop')
+# g2 = Genre.create(name: 'Rock')
+# g3 = Genre.create(name: 'Soul')
 
-a1 = Album.create(name: '1989')
-a2 = Album.create(name: 'In the Lonely Hour')
+g = [
+    Genre.create(name: 'Pop'),
+    Genre.create(name: 'Rock'),
+    Genre.create(name: 'Soul')
+  ]
 
-s1 = Song.create(name: 'Shake it off', price: 1.99)
-s2 = Song.create(name: 'Like I can', price: 2.99)
-s3 = Song.create(name: 'Bad Blodd', price: 0.99)
-s4 = Song.create(name: 'Stay', price: 1.75)
+a = [Album.create(name: '1989'),
+ Album.create(name: 'In the Lonely Hour') ]
+
+s = [Song.create(name: 'Shake it off', price: 1.99),
+Song.create(name: 'Like I can', price: 2.99),
+Song.create(name: 'Bad Blood', price: 0.99),
+Song.create(name: 'Stay', price: 1.75)]
+
+a[0].songs << s[0]
+a[1].songs << s[1]
+
+a[0].genre = g[0]
+
+# a[0].album_songs.create(song_id: s.id)
+
+# o1.order_products.create(product_id: p1.id)
